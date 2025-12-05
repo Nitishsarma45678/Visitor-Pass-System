@@ -1,0 +1,174 @@
+/* src/styles/theme.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens */
+:root{
+  --accent: #0ea5e9;
+  --accent-600: #0284c7;
+  --muted-border: #e6eef6;
+  --card-bg: #ffffff;
+}
+
+/* base body */
+body {
+  @apply bg-slate-50 text-slate-900 antialiased;
+}
+
+/* Card (panel) */
+.card {
+  @apply bg-white rounded-2xl border p-6 shadow-card;
+  border-color: var(--muted-border);
+}
+
+/* Buttons */
+.btn {
+  @apply rounded-xl px-4 py-2 font-medium transition-all inline-flex items-center gap-2;
+}
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  @apply hover:bg-[var(--accent-600)];
+}
+.btn-outline {
+  @apply border rounded-xl px-4 py-2 font-medium;
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.btn-ghost {
+  @apply px-3 py-2 rounded-lg text-sm text-slate-600 hover:bg-slate-100;
+}
+
+/* Small utilities */
+.header-title {
+  @apply text-lg font-bold text-sky-700;
+}
+.subtle {
+  @apply text-sm text-slate-500;
+}
+
+/* Badge */
+.badge {
+  @apply inline-flex items-center justify-center text-xs rounded-full px-2 py-0.5;
+}
+
+/* Modal background helper */
+.modal-backdrop {
+  @apply fixed inset-0 bg-black/50 grid place-items-center z-50;
+}
+
+/* responsive container */
+.container {
+  @apply max-w-6xl mx-auto px-4;
+}
+/* small helpers used by new pages */
+.input-inline {
+  @apply border rounded-lg px-3 py-2;
+}
+
+/* bigger QR preview card */
+.card-qr {
+  @apply bg-white rounded-2xl border p-6 shadow-card flex items-center gap-4;
+}
+
+/* hover/highlight for visitor rows */
+.visitor-row:hover {
+  @apply shadow-md;
+}
+
+/* modal card already defined earlier as .card; ensure max width for QR */
+.card.max-w-md {
+  max-width: 520px;
+}
+/* theme additions for AllPasses tweaks */
+
+/* code box: padded, bordered, not touching text */
+.code-box {
+  @apply w-14 h-14 flex items-center justify-center rounded-lg border bg-white;
+  border-color: #eef2f7; /* light */
+  padding: 0.5rem;
+}
+
+/* slightly larger visitor name — used as .text-base already, but ensure spacing */
+.visitor-name {
+  @apply text-base font-semibold;
+}
+
+/* smaller action buttons (approve/decline) */
+.btn-small {
+  @apply px-3 py-1 text-sm rounded-md;
+}
+
+/* visitor row hover — subtle shadow */
+.visitor-row:hover {
+  @apply shadow-md;
+}
+
+/* modal max width helper */
+.card.max-w-sm {
+  max-width: 480px;
+}
+/* small button helpers */
+.btn-sm {
+  @apply px-3 py-1 text-sm rounded-md inline-flex items-center gap-2;
+}
+.btn-sm-outline {
+  @apply btn-sm border;
+}
+.btn-icon {
+  @apply px-2 py-1 rounded-md inline-flex items-center justify-center;
+}
+
+/* more compact outline variant for delete */
+.btn-delete {
+  @apply btn-sm-outline text-red-600 border-red-200;
+}
+
+/* compact QR button */
+.btn-qr {
+  @apply px-2 py-1 text-sm rounded-md border border-gray-400 text-gray-800;
+}
+
+/* spinning animation for refresh buttons */
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Reserve same height for inline field errors so form doesn't reflow */
+.field-error {
+  min-height: 1rem;        /* reserve vertical space */
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: #dc2626;         /* red-600 */
+  transition: color 120ms ease;
+  /* keep text invisible when empty (but space reserved) */
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* make scanner internals fill the wrapper and use cover scaling */
+.scanner-root,
+.scanner-root video,
+.scanner-root canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  object-fit: cover !important;
+}
+.scanner-root video {
+  height: 200px !important;
+  object-fit: cover;
+}
+
+@media (min-width: 640px) {
+  .scanner-root video {
+    height: 380px !important;
+  }
+}
