@@ -3,6 +3,25 @@
 CarePass — visitor pass management PWA (demo).  
 Built with React + Tailwind, client-side storage (localForage), and a camera QR scanner.
 
+## 🚀 Live Demo
+
+Production URL: **https://visitor-pass-system.vercel.app**
+
+### Public Visitor Page (no login required)
+Visitors can create a pass at:
+
+👉 https://visitor-pass-system.vercel.app/visit
+
+### Demo Login Accounts
+Use any of the following to explore the dashboard:
+
+| Role       | Email            | Password |
+|------------|------------------|----------|
+| Admin      | admin@demo       | demo     |
+| Reception  | reception@demo   | demo     |
+| Security   | security@demo    | demo     |
+
+
 ## Project structure (high level)
 - `src/pages` — Visit, CreatePass, AllPasses, Scan, Dashboard, Login
 - `src/components` — Scanner, PassDetail, VisitorForm, ApproveModal, etc.
