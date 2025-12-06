@@ -1,12 +1,17 @@
 ﻿{
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "dist" }
-    }
-  ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
+    "builds":  [
+                   {
+                       "config":  {
+                                      "distDir":  "dist"
+                                  },
+                       "use":  "@vercel/static-build",
+                       "src":  "package.json"
+                   }
+               ],
+    "rewrites":  [
+                     {
+                         "destination":  "/index.html",
+                         "source":  "/(.*)"
+                     }
+                 ]
 }
