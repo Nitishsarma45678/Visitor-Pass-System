@@ -18,8 +18,8 @@ Use any of the following to explore the dashboard:
 | Role       | Email            | Password |
 |------------|------------------|----------|
 | Admin      | admin@demo       | admin    |
-| Reception  | reception@demo   | admin    |
-| Security   | security@demo    | admin    |
+| Reception  | reception@demo   | reception|
+| Security   | security@demo    | security |
 
 
 ## Project structure (high level)
