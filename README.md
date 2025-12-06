@@ -17,9 +17,9 @@ Use any of the following to explore the dashboard:
 
 | Role       | Email            | Password |
 |------------|------------------|----------|
-| Admin      | admin@demo       | demo     |
-| Reception  | reception@demo   | demo     |
-| Security   | security@demo    | demo     |
+| Admin      | admin@demo       | admin    |
+| Reception  | reception@demo   | admin    |
+| Security   | security@demo    | admin    |
 
 
 ## Project structure (high level)
